@@ -6,11 +6,7 @@ import { DBConfigModule } from './database/config.module';
 import { DatabaseProviderModule } from './providers/postgres.provider.module';
 
 @Module({
-  imports: [
-    NotificationModule, 
-    DBConfigModule, 
-    DatabaseProviderModule
-  ],
+  imports: [NotificationModule, DBConfigModule, DatabaseProviderModule],
   controllers: [AppController],
   providers: [AppService],
 })

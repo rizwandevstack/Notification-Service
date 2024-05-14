@@ -1,5 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, OneToOne } from 'typeorm';
-import { EmailMl } from './emailML.entity'
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToMany,
+  OneToOne,
+} from 'typeorm';
+import { EmailMl } from './emailML.entity';
 
 @Entity('emails')
 export class Email {
@@ -13,10 +19,14 @@ export class Email {
   description: string;
 
   @Column({
+    name: 'type',
     type: 'enum',
     enum: ['A', 'V', 'B'],
   })
   type: 'A' | 'V' | 'B';
+
+  @Column({ type: 'text', default: '', nullable: true })
+  payload: string;
 
   @OneToOne(() => EmailMl, (emailMl) => emailMl.email)
   emailMl: EmailMl;

@@ -8,6 +8,6 @@ export class SMSVar {
   @Column({ length: 255, nullable: true })
   value: string;
 
-  @Column({ default: true })
-  isActive: boolean;
+  @Column({ name: 'is_active', type: 'smallint', default: 1 })
+  isActive: number;
 }

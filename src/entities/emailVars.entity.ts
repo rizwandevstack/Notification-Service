@@ -8,6 +8,6 @@ export class EmailVar {
   @Column({ length: 255, nullable: true })
   value: string;
 
-  @Column({ default: true })
+  @Column({ name: 'is_active', type: 'smallint', default: 1 })
   isActive: boolean;
 }
